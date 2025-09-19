@@ -1,0 +1,75 @@
+{
+  "name": "ChatServer",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Server name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Server description"
+    },
+    "mood_theme": {
+      "type": "string",
+      "enum": [
+        "happy",
+        "sad",
+        "angry",
+        "confused",
+        "excited",
+        "anxious",
+        "calm",
+        "lonely",
+        "energetic",
+        "mixed"
+      ],
+      "description": "Primary mood theme for the server"
+    },
+    "privacy": {
+      "type": "string",
+      "enum": [
+        "public",
+        "private"
+      ],
+      "default": "public",
+      "description": "Server privacy setting"
+    },
+    "invite_code": {
+      "type": "string",
+      "description": "Invite code for private servers"
+    },
+    "member_count": {
+      "type": "number",
+      "default": 1,
+      "description": "Number of members in server"
+    },
+    "max_members": {
+      "type": "number",
+      "default": 50,
+      "description": "Maximum members allowed"
+    },
+    "server_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Server rules and guidelines"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Server tags for categorization"
+    }
+  },
+  "required": [
+    "name",
+    "mood_theme"
+  ]
+}

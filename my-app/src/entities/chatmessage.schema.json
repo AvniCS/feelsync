@@ -1,0 +1,53 @@
+{
+  "name": "ChatMessage",
+  "type": "object",
+  "properties": {
+    "server_id": {
+      "type": "string",
+      "description": "ID of the chat server"
+    },
+    "message": {
+      "type": "string",
+      "description": "Message content"
+    },
+    "sender_mood": {
+      "type": "string",
+      "enum": [
+        "happy",
+        "sad",
+        "angry",
+        "confused",
+        "excited",
+        "anxious",
+        "calm",
+        "lonely",
+        "energetic"
+      ],
+      "description": "Sender's current mood"
+    },
+    "is_anonymous": {
+      "type": "boolean",
+      "default": true
+    },
+    "anonymous_name": {
+      "type": "string",
+      "description": "Anonymous display name"
+    },
+    "reply_to": {
+      "type": "string",
+      "description": "ID of message being replied to"
+    },
+    "is_flagged": {
+      "type": "boolean",
+      "default": false
+    },
+    "support_count": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "server_id",
+    "message"
+  ]
+}

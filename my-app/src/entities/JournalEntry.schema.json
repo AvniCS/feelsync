@@ -1,0 +1,46 @@
+{
+  "name": "JournalEntry",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Entry title"
+    },
+    "content": {
+      "type": "string",
+      "description": "Journal content"
+    },
+    "mood": {
+      "type": "string",
+      "enum": [
+        "happy",
+        "sad",
+        "angry",
+        "confused",
+        "excited",
+        "anxious",
+        "calm",
+        "lonely",
+        "energetic"
+      ],
+      "description": "Mood when writing"
+    },
+    "privacy": {
+      "type": "string",
+      "enum": [
+        "private",
+        "anonymous"
+      ],
+      "default": "private"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "content"
+  ]
+}

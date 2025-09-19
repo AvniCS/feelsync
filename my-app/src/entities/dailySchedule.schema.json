@@ -1,0 +1,78 @@
+{
+  "name": "DailySchedule",
+  "type": "object",
+  "properties": {
+    "profession": {
+      "type": "string",
+      "description": "User's profession or main activity"
+    },
+    "wake_up_time": {
+      "type": "string",
+      "description": "Preferred wake up time"
+    },
+    "sleep_time": {
+      "type": "string",
+      "description": "Preferred sleep time"
+    },
+    "work_hours": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        }
+      }
+    },
+    "daily_tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "task": {
+            "type": "string"
+          },
+          "time_slot": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "completed": {
+            "type": "boolean",
+            "default": false
+          },
+          "mood_points": {
+            "type": "number",
+            "default": 0
+          }
+        }
+      }
+    },
+    "ai_suggestions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "schedule_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "productivity_score": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "profession",
+    "wake_up_time",
+    "schedule_date"
+  ]
+}

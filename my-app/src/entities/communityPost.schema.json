@@ -1,0 +1,51 @@
+{
+  "name": "CommunityPost",
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "string",
+      "description": "Post content"
+    },
+    "mood": {
+      "type": "string",
+      "enum": [
+        "happy",
+        "sad",
+        "angry",
+        "confused",
+        "excited",
+        "anxious",
+        "calm",
+        "lonely",
+        "energetic"
+      ],
+      "description": "Mood when posting"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "general",
+        "advice",
+        "support",
+        "celebration",
+        "question"
+      ]
+    },
+    "is_anonymous": {
+      "type": "boolean",
+      "default": true
+    },
+    "support_count": {
+      "type": "number",
+      "default": 0
+    },
+    "is_flagged": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "content",
+    "mood"
+  ]
+}

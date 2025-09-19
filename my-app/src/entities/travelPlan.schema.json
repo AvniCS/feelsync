@@ -1,0 +1,87 @@
+{
+  "name": "TravelPlan",
+  "type": "object",
+  "properties": {
+    "destination_type": {
+      "type": "string",
+      "enum": [
+        "beach",
+        "mountains",
+        "city",
+        "countryside",
+        "adventure",
+        "cultural",
+        "wellness",
+        "romantic"
+      ],
+      "description": "Type of destination preference"
+    },
+    "budget": {
+      "type": "number",
+      "description": "Travel budget in dollars"
+    },
+    "duration": {
+      "type": "number",
+      "description": "Trip duration in days"
+    },
+    "mood_when_created": {
+      "type": "string",
+      "enum": [
+        "happy",
+        "sad",
+        "angry",
+        "confused",
+        "excited",
+        "anxious",
+        "calm",
+        "lonely",
+        "energetic"
+      ],
+      "description": "User's mood when planning"
+    },
+    "generated_destination": {
+      "type": "string",
+      "description": "AI-suggested destination"
+    },
+    "itinerary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "number"
+          },
+          "activities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "estimated_cost": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "travel_tips": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planning",
+        "booked",
+        "completed"
+      ],
+      "default": "planning"
+    }
+  },
+  "required": [
+    "destination_type",
+    "budget",
+    "duration"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "FitnessData",
+  "type": "object",
+  "properties": {
+    "heart_rate": {
+      "type": "number",
+      "description": "Current heart rate (bpm)"
+    },
+    "stress_level": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Stress level percentage"
+    },
+    "steps": {
+      "type": "number",
+      "description": "Steps taken today"
+    },
+    "calories_burned": {
+      "type": "number",
+      "description": "Calories burned today"
+    },
+    "sleep_hours": {
+      "type": "number",
+      "description": "Hours of sleep last night"
+    },
+    "fitness_goals": {
+      "type": "object",
+      "properties": {
+        "daily_steps": {
+          "type": "number",
+          "default": 10000
+        },
+        "weekly_workouts": {
+          "type": "number",
+          "default": 3
+        },
+        "stress_target": {
+          "type": "number",
+          "default": 30
+        }
+      }
+    },
+    "ai_recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mood_correlation": {
+      "type": "string",
+      "description": "How fitness data correlates with mood"
+    }
+  },
+  "required": []
+}

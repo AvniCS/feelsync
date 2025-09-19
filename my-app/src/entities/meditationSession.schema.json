@@ -1,0 +1,59 @@
+{
+  "name": "MeditationSession",
+  "type": "object",
+  "properties": {
+    "duration": {
+      "type": "number",
+      "description": "Duration in minutes"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "breathing",
+        "mindfulness",
+        "body_scan",
+        "loving_kindness",
+        "sleep"
+      ]
+    },
+    "mood_before": {
+      "type": "string",
+      "enum": [
+        "happy",
+        "sad",
+        "angry",
+        "confused",
+        "excited",
+        "anxious",
+        "calm",
+        "lonely",
+        "energetic"
+      ]
+    },
+    "mood_after": {
+      "type": "string",
+      "enum": [
+        "happy",
+        "sad",
+        "angry",
+        "confused",
+        "excited",
+        "anxious",
+        "calm",
+        "lonely",
+        "energetic"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "duration",
+    "type"
+  ]
+}
